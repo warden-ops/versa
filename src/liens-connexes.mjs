@@ -52,6 +52,18 @@ export const pagesConnexes = {
     title: 'Financement corporatif et stratégique',
     description: 'Croissance, acquisitions et structure financière.',
   },
+  affacturage: {
+    href: '/affacturage/',
+    kicker: 'Produit',
+    title: 'Affacturage',
+    description: 'Liquidités et gestion des créances par une équipe spécialisée.',
+  },
+  'pret-a-terme': {
+    href: '/pret-a-terme/',
+    kicker: 'Produit',
+    title: 'Prêt à terme',
+    description: 'Acquisition d’équipement, versements et échéances préétablis.',
+  },
   versaequip: {
     href: 'https://www.versaequip.ca/fr/accueil.htm',
     kicker: 'Nouvelle ligne de produits',
@@ -115,6 +127,20 @@ export const pagesConnexes = {
     description: 'Growth, acquisitions and financial structure.',
     locale: 'en',
   },
+  'en-factoring': {
+    href: '/en/factoring/',
+    kicker: 'Product',
+    title: 'Factoring',
+    description: 'Liquidity, with a specialized team managing receivables.',
+    locale: 'en',
+  },
+  'en-term-loan': {
+    href: '/en/term-loan/',
+    kicker: 'Product',
+    title: 'Term loan',
+    description: 'Equipment purchases, with payments and due dates set in advance.',
+    locale: 'en',
+  },
   'versaequip-en': {
     href: 'https://www.versaequip.ca/',
     kicker: 'New product line',
@@ -139,6 +165,10 @@ export const liensParPage = {
   'en/equipment-financing': ['en-leasing', 'en-heavy-machinery-financing', 'en-trucks-trailers-financing', 'en-agricultural-equipment-financing', 'en-equipment-refinancing', 'en-corporate-strategic-financing', 'versaequip-en'],
   'en/leasing': ['en-equipment-financing', 'en-corporate-strategic-financing', 'versaequip-en'],
   'en/corporate-strategic-financing': ['en-equipment-financing', 'en-leasing', 'en-working-capital', 'versaequip-en'],
+  affacturage: ['pret-a-terme', 'fonds-de-roulement', 'financement-corporatif-strategique', 'credit-bail'],
+  'pret-a-terme': ['credit-bail', 'financement-equipements', 'affacturage', 'fonds-de-roulement'],
+  'en/factoring': ['en-term-loan', 'en-working-capital', 'en-corporate-strategic-financing', 'en-leasing'],
+  'en/term-loan': ['en-leasing', 'en-equipment-financing', 'en-factoring', 'en-working-capital'],
 };
 
 export function carteConnexe(cle) {

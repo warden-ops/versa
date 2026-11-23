@@ -8,6 +8,7 @@ const pdf = {
 };
 
 test('chaque page annonce sa langue et son équivalent', async ({ page }) => {
+  test.setTimeout(180_000);
   for (const pageInfo of pagesLangues) {
     const res = await page.request.get(pageInfo.path);
     expect(res.ok(), pageInfo.path).toBe(true);
@@ -30,15 +31,27 @@ test('chaque page annonce sa langue et son équivalent', async ({ page }) => {
     const courant = pageInfo.lang === 'fr' ? 'a[hreflang="fr-CA"]' : 'a[hreflang="en-CA"]';
     await expect(lang.locator(courant)).toHaveAttribute('aria-current', 'page');
 
+    expect(html, pageInfo.path).toContain('property="og:title"');
+    expect(html, pageInfo.path).toContain('property="og:description"');
+    expect(html, pageInfo.path).toContain('property="og:image"');
+    expect(html, pageInfo.path).toContain(`property="og:url" content="${ORIGIN}${pageInfo.path}"`);
+    expect(html, pageInfo.path).toContain('name="twitter:card"');
+    expect(html, pageInfo.path).toContain(pageInfo.lang === 'en' ? 'en_CA' : 'fr_CA');
+
     const faq = page.locator('script[type="application/ld+json"]');
-    if (await faq.count()) {
-      const data = JSON.parse(await faq.textContent());
-      expect(data['@type'], pageInfo.path).toBe('FAQPage');
-      const questions = (await page.locator('.faq__q').allTextContents()).map((t) => t.trim());
-      const answers = (await page.locator('.faq__a').allTextContents()).map((t) => t.trim());
-      expect(questions, pageInfo.path).toHaveLength(6);
-      expect(data.mainEntity.map((item) => item.name)).toEqual(questions);
-      expect(data.mainEntity.map((item) => item.acceptedAnswer.text)).toEqual(answers);
+    const scripts = [];
+    for (let i = 0; i < await faq.count(); i += 1) {
+      scripts.push(JSON.parse(await faq.nth(i).textContent()));
+    }
+    const questions = (await page.locator('.faq__q').allTextContents()).map((t) => t.trim());
+    const answers = (await page.locator('.faq__a').allTextContents()).map((t) => t.trim());
+    const faqLd = scripts.find((data) => data['@type'] === 'FAQPage');
+    if (questions.length) {
+      expect(faqLd, pageInfo.path).toBeTruthy();
+      expect(faqLd.mainEntity.map((item) => item.name), pageInfo.path).toEqual(questions);
+      expect(faqLd.mainEntity.map((item) => item.acceptedAnswer.text), pageInfo.path).toEqual(answers);
+    } else {
+      expect(faqLd, pageInfo.path).toBeUndefined();
     }
 
     const fit = await page.evaluate(() => document.documentElement.scrollWidth <= document.documentElement.clientWidth + 1);
@@ -50,7 +63,7 @@ test('la page carrières anglaise ouvre bientôt, sans URL inventée', async ({ 
   await page.goto('/en/careers/');
   await page.waitForFunction(() => window.__ready === true && document.querySelector('[data-recrutement]')?.dataset.script === 'pret');
   await expect(page.locator('[data-recrutement]')).toHaveAttribute('data-endpoint', 'ferme');
-  await expect(page.locator('.consent__text a')).toHaveAttribute('href', 'https://versacapital.ca/politique-de-confidentialite/');
+  await expect(page.locator('.consent__text a')).toHaveAttribute('href', '/en/privacy-policy/');
   await expect(page.locator('select')).toHaveCount(0);
   await page.locator('input[name="Prenom"]').fill('Marie');
   await page.locator('input[name="Nom"]').fill('Tremblay');

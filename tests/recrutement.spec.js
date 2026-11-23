@@ -141,7 +141,7 @@ test('la page propose une candidature spontanée, sans liste de postes', async (
   await expect(poste).toHaveAttribute('type', 'text');
   await expect(poste).toHaveValue('');
   await expect(page.locator('#consentement')).not.toBeChecked();
-  await expect(page.locator('.consent__text a')).toHaveAttribute('href', 'https://versacapital.ca/politique-de-confidentialite/');
+  await expect(page.locator('.consent__text a')).toHaveAttribute('href', '/politique-de-confidentialite/');
   await expect(page.locator('[data-recrutement]')).toHaveAttribute('data-endpoint', 'ferme');
 });
 

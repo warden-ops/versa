@@ -121,5 +121,125 @@ export const pagesLangues = [
     "title": "Working capital for businesses in Quebec | Versa Capital",
     "lang": "en",
     "pair": "/fonds-de-roulement/"
+  },
+  {
+    "path": "/soumission/",
+    "title": "Soumission | Versa Capital",
+    "lang": "fr",
+    "pair": "/en/quote/"
+  },
+  {
+    "path": "/en/quote/",
+    "title": "Quote request | Versa Capital",
+    "lang": "en",
+    "pair": "/soumission/"
+  },
+  {
+    "path": "/contact/",
+    "title": "Contact | Versa Capital",
+    "lang": "fr",
+    "pair": "/en/contact/"
+  },
+  {
+    "path": "/en/contact/",
+    "title": "Contact | Versa Capital",
+    "lang": "en",
+    "pair": "/contact/"
+  },
+  {
+    "path": "/a-propos/",
+    "title": "À propos de Versa Capital | Financement d’équipement commercial",
+    "lang": "fr",
+    "pair": "/en/about/"
+  },
+  {
+    "path": "/en/about/",
+    "title": "About Versa Capital | Commercial equipment financing",
+    "lang": "en",
+    "pair": "/a-propos/"
+  },
+  {
+    "path": "/temoignages/",
+    "title": "Témoignages de financement d’équipement commercial | Versa Capital",
+    "lang": "fr",
+    "pair": "/en/testimonials/"
+  },
+  {
+    "path": "/en/testimonials/",
+    "title": "Testimonials on commercial equipment financing | Versa Capital",
+    "lang": "en",
+    "pair": "/temoignages/"
+  },
+  {
+    "path": "/faq/",
+    "title": "FAQ, financement d’équipement commercial | Versa Capital",
+    "lang": "fr",
+    "pair": "/en/faq/"
+  },
+  {
+    "path": "/en/faq/",
+    "title": "FAQ, commercial equipment financing | Versa Capital",
+    "lang": "en",
+    "pair": "/faq/"
+  },
+  {
+    "path": "/politique-de-confidentialite/",
+    "title": "Politique de confidentialité | Versa Capital",
+    "lang": "fr",
+    "pair": "/en/privacy-policy/"
+  },
+  {
+    "path": "/en/privacy-policy/",
+    "title": "Privacy policy | Versa Capital",
+    "lang": "en",
+    "pair": "/politique-de-confidentialite/"
+  },
+  {
+    "path": "/vincent-lacasse/",
+    "title": "Vincent Lacasse | Versa Capital",
+    "lang": "fr",
+    "pair": "/en/vincent-lacasse/"
+  },
+  {
+    "path": "/en/vincent-lacasse/",
+    "title": "Vincent Lacasse | Versa Capital",
+    "lang": "en",
+    "pair": "/vincent-lacasse/"
+  },
+  {
+    "path": "/affacturage/",
+    "title": "Affacturage pour entreprises au Québec | Versa Capital",
+    "lang": "fr",
+    "pair": "/en/factoring/"
+  },
+  {
+    "path": "/en/factoring/",
+    "title": "Factoring for businesses in Quebec | Versa Capital",
+    "lang": "en",
+    "pair": "/affacturage/"
+  },
+  {
+    "path": "/pret-a-terme/",
+    "title": "Prêt à terme pour entreprises au Québec | Versa Capital",
+    "lang": "fr",
+    "pair": "/en/term-loan/"
+  },
+  {
+    "path": "/en/term-loan/",
+    "title": "Term loan for businesses in Quebec | Versa Capital",
+    "lang": "en",
+    "pair": "/pret-a-terme/"
+  },
+  {
+    "path": "/experience-client/",
+    "title": "Expérience-client | Versa Capital",
+    "lang": "fr",
+    "pair": "/en/client-experience/"
+  },
+  {
+    "path": "/en/client-experience/",
+    "title": "Client experience | Versa Capital",
+    "lang": "en",
+    "pair": "/experience-client/"
   }
 ];

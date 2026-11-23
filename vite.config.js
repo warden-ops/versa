@@ -1,4 +1,5 @@
 import { resolve } from 'path';
+import { redirectionsAnciennes } from './src/redirections.mjs';
 const pages = [
   ['financement-equipements', 'financement-equipements'],
   ['financement-corporatif-strategique', 'financement-corporatif-strategique'],
@@ -19,9 +20,30 @@ const pages = [
   ['en-agricultural-equipment-financing', 'en/agricultural-equipment-financing'],
   ['en-equipment-refinancing', 'en/equipment-refinancing'],
   ['en-working-capital', 'en/working-capital'],
+  ['soumission', 'soumission'],
+  ['contact', 'contact'],
+  ['a-propos', 'a-propos'],
+  ['temoignages', 'temoignages'],
+  ['faq', 'faq'],
+  ['politique-de-confidentialite', 'politique-de-confidentialite'],
+  ['vincent-lacasse', 'vincent-lacasse'],
+  ['affacturage', 'affacturage'],
+  ['pret-a-terme', 'pret-a-terme'],
+  ['experience-client', 'experience-client'],
+  ['en-quote', 'en/quote'],
+  ['en-contact', 'en/contact'],
+  ['en-about', 'en/about'],
+  ['en-testimonials', 'en/testimonials'],
+  ['en-faq', 'en/faq'],
+  ['en-privacy-policy', 'en/privacy-policy'],
+  ['en-vincent-lacasse', 'en/vincent-lacasse'],
+  ['en-factoring', 'en/factoring'],
+  ['en-term-loan', 'en/term-loan'],
+  ['en-client-experience', 'en/client-experience'],
 ];
 export default {
   base: '/',
+  plugins: [redirectionsAnciennes()],
   server: { host: '0.0.0.0', port: 5180, strictPort: true },
   preview: { host: '0.0.0.0', port: 5180 },
   build: {
