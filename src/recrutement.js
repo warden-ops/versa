@@ -21,7 +21,7 @@ const MSG_FR = {
   cvVide: 'Le fichier CV est vide.',
   cvTaille: 'Le CV doit faire 5 Mo ou moins.',
   consentement: 'Cochez la case pour consentir à la collecte de vos renseignements.',
-  ferme: 'Le dépôt de candidatures sera ouvert sous peu.',
+  ferme: 'Le formulaire en ligne n’est pas ouvert. Envoyez votre CV à info@versacapital.ca.',
   merci: 'Merci. Nous avons bien reçu votre envoi.',
 };
 
@@ -36,7 +36,7 @@ const MSG_EN = {
   cvVide: 'The resume file is empty.',
   cvTaille: 'The resume must be 5 MB or less.',
   consentement: 'Check the box to consent to the collection of your information.',
-  ferme: 'Applications will open shortly.',
+  ferme: 'The online form is not open. Email your resume to info@versacapital.ca.',
   merci: 'Thank you. We have received your submission.',
 };
 
@@ -143,6 +143,8 @@ if (form) {
   }
   form.dataset.endpoint = endpoint ? 'pret' : 'ferme';
   form.dataset.script = 'pret';
+  const repli = form.querySelector('[data-repli]');
+  if (repli && endpoint) repli.hidden = true;
 
   window.__soumettreCandidature = (event) => {
     trimTextFields();

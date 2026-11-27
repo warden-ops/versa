@@ -1,7 +1,7 @@
 import { test, expect } from '@playwright/test';
 import { mkdirSync } from 'node:fs';
 
-const FERME = 'Le dépôt de candidatures sera ouvert sous peu.';
+const FERME = 'Le formulaire en ligne n’est pas ouvert. Envoyez votre CV à info@versacapital.ca.';
 const MERCI = 'Merci. Nous avons bien reçu votre envoi.';
 const COLLECT = process.env.COLLECT_URL || 'http://127.0.0.1:5199';
 const MAX = 5 * 1024 * 1024;
@@ -363,7 +363,7 @@ test('les autres pages restent entières', async ({ page }) => {
   }
 
   await page.goto('/');
-  await expect(page.getByRole('heading', { level: 1 })).toContainText('Pour les projets');
+  await expect(page.getByRole('heading', { level: 1 })).toContainText('Financement d’équipements et financement d’entreprise au Québec');
   await expect(page.locator('#contact form')).toBeVisible();
   await page.goto('/financement-equipements/');
   await expect(page.getByRole('heading', { level: 1 })).toContainText('Financement');

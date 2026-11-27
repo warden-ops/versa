@@ -45,7 +45,18 @@
     <img class="hdr__logo-n" src="%BASE_URL%img/logo-navy.png" alt="" width="1250" height="335" />
   </a>
   <nav class="hdr__nav" aria-label="Primary">
-    <a href="/en/#produits">Products</a>
+    <div class="nav-drop"><button type="button" class="nav-drop__btn" aria-expanded="false" aria-controls="menu-services">Products</button><ul id="menu-services" class="nav-drop__menu" hidden>
+      <li><a href="/en/equipment-financing/">Equipment financing</a></li>
+      <li><a href="/en/leasing/">Leasing</a></li>
+      <li><a href="/en/term-loan/">Term loan</a></li>
+      <li><a href="/en/working-capital/">Working capital</a></li>
+      <li><a href="/en/equipment-refinancing/">Equipment refinancing</a></li>
+      <li><a href="/en/factoring/">Factoring</a></li>
+      <li><a href="/en/heavy-machinery-financing/">Heavy machinery</a></li>
+      <li><a href="/en/trucks-trailers-financing/">Trucks and trailers</a></li>
+      <li><a href="/en/agricultural-equipment-financing/">Agricultural equipment</a></li>
+      <li><a href="/en/corporate-strategic-financing/">Corporate and strategic financing</a></li>
+    </ul></div>
     <a href="/en/#secteurs">Sectors</a>
     <a href="/en/about/">About</a>
     <a href="/en/careers/" aria-current="page">Careers</a>
@@ -54,7 +65,7 @@
   </nav>
   <div class="hdr__cta">
     <a class="hdr__tel" href="tel:+18335083772">1-833-508-3772</a>
-    <a class="btn btn--sm" href="/en/#contact"><span class="btn__label" data-text="Request a quote">Request a quote</span><span class="btn__arrow" aria-hidden="true"></span></a>
+    <a class="btn btn--sm" href="/en/#contact"><span class="btn__label" data-text="Discuss my financing">Discuss my financing</span><span class="btn__arrow" aria-hidden="true"></span></a>
   </div>
 </header>
 
@@ -120,6 +131,7 @@
         </div>
       </div>
       <form class="form fade" name="form" method="post" enctype="multipart/form-data" accept-charset="UTF-8" novalidate data-recrutement onsubmit="return window.__soumettreCandidature ? window.__soumettreCandidature(event) : false">
+        <p class="form__reply" data-repli>The online form is not open. Email your resume to <a href="mailto:info@versacapital.ca">info@versacapital.ca</a>.</p>
         <p class="form__note">Fields marked required must be filled in. The role sought may be left blank.</p>
         <div class="hp" aria-hidden="true">
           <label>Leave this field blank<input type="text" name="champ_piege" tabindex="-1" autocomplete="off" data-honeypot data-lpignore="true" /></label>
@@ -231,5 +243,6 @@
 
 <script type="module" src="/src/main.js"></script>
 <script type="module" src="/src/recrutement.js"></script>
+<a class="call-sticky" href="tel:+18335083772">Call</a>
 </body>
 </html>

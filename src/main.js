@@ -1,4 +1,6 @@
 /* Versa Capital, accueil premium: header state, hero reveal, staggered reveals, count-up. No libs. */
+import { brancherDemandes } from './demande.js';
+
 const root = document.documentElement;
 const params = new URLSearchParams(location.search);
 const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches || params.has('static');
@@ -19,6 +21,16 @@ function updateHeader() {
   if (!reduce) hdr.classList.toggle('is-hidden', y > 500 && y > lastY + 4);
   if (y < lastY - 4) hdr.classList.remove('is-hidden');
   lastY = y;
+  if (hdr.classList.contains('is-hidden')) {
+    $$('.nav-drop').forEach((drop) => {
+      const menu = $('.nav-drop__menu', drop);
+      const btn = $('.nav-drop__btn', drop);
+      if (menu && !menu.hidden) {
+        menu.hidden = true;
+        btn?.setAttribute('aria-expanded', 'false');
+      }
+    });
+  }
 }
 window.addEventListener('scroll', updateHeader, { passive: true });
 updateHeader();
@@ -54,6 +66,67 @@ if (reduce) {
   $$('.fade').forEach((el) => io.observe(el));
 }
 window.__ready = true;
+
+function fermerMenu(drop) {
+  const menu = $('.nav-drop__menu', drop);
+  const btn = $('.nav-drop__btn', drop);
+  if (!menu || !btn) return;
+  menu.hidden = true;
+  btn.setAttribute('aria-expanded', 'false');
+}
+
+function ouvrirMenu(drop) {
+  const menu = $('.nav-drop__menu', drop);
+  const btn = $('.nav-drop__btn', drop);
+  if (!menu || !btn) return;
+  menu.hidden = false;
+  btn.setAttribute('aria-expanded', 'true');
+}
+
+$$('.nav-drop').forEach((drop) => {
+  const btn = $('.nav-drop__btn', drop);
+  const menu = $('.nav-drop__menu', drop);
+  if (!btn || !menu) return;
+  const liens = () => $$('a', menu);
+  liens().forEach((a) => {
+    if (a.pathname === location.pathname) a.setAttribute('aria-current', 'page');
+  });
+  btn.addEventListener('click', () => (menu.hidden ? ouvrirMenu(drop) : fermerMenu(drop)));
+  btn.addEventListener('keydown', (e) => {
+    if (e.key !== 'ArrowDown' && e.key !== 'Enter' && e.key !== ' ') return;
+    if (e.key === 'ArrowDown') {
+      e.preventDefault();
+      ouvrirMenu(drop);
+      liens()[0]?.focus();
+    }
+  });
+  menu.addEventListener('keydown', (e) => {
+    const items = liens();
+    const i = items.indexOf(document.activeElement);
+    if (e.key === 'Escape') {
+      e.preventDefault();
+      fermerMenu(drop);
+      btn.focus();
+    } else if (e.key === 'ArrowDown') {
+      e.preventDefault();
+      items[(i + 1) % items.length]?.focus();
+    } else if (e.key === 'ArrowUp') {
+      e.preventDefault();
+      items[(i - 1 + items.length) % items.length]?.focus();
+    } else if (e.key === 'Home') {
+      e.preventDefault();
+      items[0]?.focus();
+    } else if (e.key === 'End') {
+      e.preventDefault();
+      items[items.length - 1]?.focus();
+    }
+  });
+  document.addEventListener('click', (e) => {
+    if (!drop.contains(e.target)) fermerMenu(drop);
+  });
+});
+
+brancherDemandes();
 
 /* ---- Vivant 2026-10-16: progress bar, parallax, tilt, magnetic (no libs) ---- */
 const bar = $('.progress');
