@@ -1,8 +1,7 @@
 /* Demandes de financement.
    Un seul réglage : VITE_DEMANDE_ENDPOINT.
    Vide = le visiteur confirme, puis son logiciel de courriel s’ouvre vers info@versacapital.ca.
-   Une URL https (ou http locale) = POST JSON du même formulaire, puis confirmation à l’écran.
-   TODO-CLIENT: choisir l’outil de formulaire hébergé au Canada et renseigner VITE_DEMANDE_ENDPOINT au build. */
+   Une URL https (ou http locale) = POST JSON du même formulaire, puis confirmation à l’écran. */
 
 const COURRIEL = 'info@versacapital.ca';
 
