@@ -66,8 +66,8 @@
 }
   </script>
   <script>document.documentElement.classList.replace('no-js','js');</script>
-  <script type="module" crossorigin src="/assets/main-CaWCtqMv.js"></script>
-  <link rel="stylesheet" crossorigin href="/assets/main-I15rbaGU.css">
+  <script type="module" crossorigin src="/assets/main-Cl1D4Ofs.js"></script>
+  <link rel="stylesheet" crossorigin href="/assets/main-GQdg1yTc.css">
 </head>
 <body>
 
@@ -82,7 +82,18 @@
     <img class="hdr__logo-n" src="/img/logo-navy.png" alt="" width="1250" height="335" />
   </a>
   <nav class="hdr__nav" aria-label="Primary">
-    <a href="/en/#produits">Products</a>
+    <div class="nav-drop"><button type="button" class="nav-drop__btn" aria-expanded="false" aria-controls="menu-services">Products</button><ul id="menu-services" class="nav-drop__menu" hidden>
+      <li><a href="/en/equipment-financing/">Equipment financing</a></li>
+      <li><a href="/en/leasing/">Leasing</a></li>
+      <li><a href="/en/term-loan/">Term loan</a></li>
+      <li><a href="/en/working-capital/">Working capital</a></li>
+      <li><a href="/en/equipment-refinancing/">Equipment refinancing</a></li>
+      <li><a href="/en/factoring/">Factoring</a></li>
+      <li><a href="/en/heavy-machinery-financing/">Heavy machinery</a></li>
+      <li><a href="/en/trucks-trailers-financing/">Trucks and trailers</a></li>
+      <li><a href="/en/agricultural-equipment-financing/">Agricultural equipment</a></li>
+      <li><a href="/en/corporate-strategic-financing/">Corporate and strategic financing</a></li>
+    </ul></div>
     <a href="/en/#secteurs">Sectors</a>
     <a href="/en/about/">About</a>
     <a href="/en/careers/">Careers</a>
@@ -91,7 +102,7 @@
   </nav>
   <div class="hdr__cta">
     <a class="hdr__tel" href="tel:+18335083772">1-833-508-3772</a>
-    <a class="btn btn--sm" href="#contact"><span class="btn__label" data-text="Request a quote">Request a quote</span><span class="btn__arrow" aria-hidden="true"></span></a>
+    <a class="btn btn--sm" href="#contact"><span class="btn__label" data-text="Discuss my financing">Discuss my financing</span><span class="btn__arrow" aria-hidden="true"></span></a>
   </div>
 </header>
 
@@ -108,10 +119,9 @@
           <span class="hero__brand-name">Versa Capital</span>
           <span class="hero__brand-role">Equipment financing advisory firm</span>
         </p>
-        <h1 class="hero__title">For the projects of today. <span>And the relationships of tomorrow.</span></h1>
+        <h1 class="hero__title">Equipment and business financing in Quebec</h1>
         <div class="hero__ctas">
-          <a class="btn" data-magnetic href="#contact"><span class="btn__label" data-text="Request a quote">Request a quote</span><span class="btn__arrow" aria-hidden="true"></span></a>
-          <a class="hero__tel" href="tel:+18335083772"><span class="label label--muted">Call us</span><span>1-833-508-3772</span></a>
+          <a class="btn" data-magnetic href="#contact"><span class="btn__label" data-text="Discuss my financing">Discuss my financing</span><span class="btn__arrow" aria-hidden="true"></span></a>
         </div>
       </div>
     </div>
@@ -153,7 +163,7 @@
               <li>Flexible structures (leasing, loan, lease-to-own)</li>
               <li>Short timelines and a straightforward process</li>
             </ul>
-            <a class="svc__cta" href="/en/equipment-financing/">Learn more<span class="svc__arrow" aria-hidden="true"></span></a>
+            <a class="svc__cta" href="/en/equipment-financing/">Explore equipment financing<span class="svc__arrow" aria-hidden="true"></span></a>
           </div>
         </article>
         <article class="svc fade" data-tilt>
@@ -170,8 +180,7 @@
               <li>Private and alternative financing</li>
               <li>Financial structure</li>
             </ul>
-            <a class="svc__cta svc__cta--ext" href="https://www.versacorpfinance.com" target="_blank" rel="noopener">www.versacorpfinance.com<span class="svc__note">Site under construction</span></a>
-            <a class="svc__cta" href="/en/corporate-strategic-financing/">Learn more<span class="svc__arrow" aria-hidden="true"></span></a>
+            <a class="svc__cta" href="/en/corporate-strategic-financing/">Explore corporate financing<span class="svc__arrow" aria-hidden="true"></span></a>
           </div>
         </article>
         <article class="svc svc--ligne fade" data-tilt>
@@ -209,13 +218,14 @@
   <section class="stat" data-section="dark">
     <div class="blobs" aria-hidden="true"><i></i><i></i><i></i></div>
     <div class="wrap stat__wrap fade">
-      <div class="kpis">
+      <!-- TODO-CLIENT: period covered by these figures. Do not display it until the client confirms it. -->
+        <div class="kpis">
         <div class="kpi"><span class="kpi__pre">More than</span><span class="kpi__num"><span data-count="20">20</span></span><span class="kpi__cap">financial partners</span></div>
         <div class="kpi"><span class="kpi__pre">More than</span><span class="kpi__num"><span data-count="5000">5,000</span></span><span class="kpi__cap">satisfied clients</span></div>
         <div class="kpi"><span class="kpi__pre">More than</span><span class="kpi__num"><span data-count="650">650</span>&nbsp;M$</span><span class="kpi__cap">in financing</span></div>
         <div class="kpi"><span class="kpi__pre">More than</span><span class="kpi__num"><span data-count="20">20</span></span><span class="kpi__cap">dealer partners</span></div>
       </div>
-      <a class="btn" data-magnetic href="#contact"><span class="btn__label" data-text="Request a quote">Request a quote</span><span class="btn__arrow" aria-hidden="true"></span></a>
+      <a class="btn" data-magnetic href="#contact"><span class="btn__label" data-text="Discuss my financing">Discuss my financing</span><span class="btn__arrow" aria-hidden="true"></span></a>
     </div>
   </section>
 
@@ -366,6 +376,8 @@
       </div>
       <!-- PREVIEW: no delivery service exists yet. The form opens an email to info@versacapital.ca until it is connected. -->
       <form class="form fade" action="mailto:info@versacapital.ca" method="post" enctype="text/plain" data-needs-backend>
+        <p class="form__reply">A Versa Capital advisor will reply.</p>
+        <!-- TODO-CLIENT: confirm the reply time and the advisor name. Do not show either until the client provides them. -->
         <div class="form__row">
           <label class="field"><span>Full name</span><input name="nom" type="text" autocomplete="name" required /></label>
           <label class="field"><span>Company</span><input name="entreprise" type="text" autocomplete="organization" /></label>
@@ -388,7 +400,14 @@
           </select>
         </label>
         <label class="field"><span>Your project</span><textarea name="message" rows="4" placeholder="Type of equipment, timeline, other details"></textarea></label>
-        <button class="btn form__submit" type="submit"><span class="btn__label" data-text="Discuss my project">Discuss my project</span><span class="btn__arrow" aria-hidden="true"></span></button>
+                <div class="consent">
+          <input id="consentement-demande" name="consentement" type="checkbox" value="oui" required />
+          <div class="consent__text">
+            <label for="consentement-demande">I consent to Versa Capital collecting this information to respond to my request. It is disclosed within Canada, unless an exception requires consent. For an access, correction or deletion request, I write to fparent@versacapital.ca.</label>
+            <a href="/en/privacy-policy/">Privacy policy (Law 25)</a>
+          </div>
+        </div>
+        <button class="btn form__submit" type="submit"><span class="btn__label" data-text="Send my request">Send my request</span><span class="btn__arrow" aria-hidden="true"></span></button>
       </form>
     </div>
   </section>
@@ -450,5 +469,6 @@
   </div>
 </footer>
 
+<a class="call-sticky" href="tel:+18335083772">Call</a>
 </body>
 </html>
