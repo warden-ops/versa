@@ -153,7 +153,7 @@ h1,h2,h3,p,figure{margin:0}
 .field{display:flex;flex-direction:column;gap:6px;font-size:13px;font-weight:500;color:var(--ink)}
 .field input,.field select,.field textarea{font:inherit;font-weight:400;font-size:15px;color:var(--ink);background:var(--white);border:1px solid var(--line);border-radius:3px;padding:11px 12px;width:100%}
 .field input:focus,.field select:focus,.field textarea:focus{outline:2px solid var(--royal);outline-offset:0;border-color:var(--royal)}
-.form__submit{align-self:flex-start}
+.form__submit{align-self:flex-start;scroll-margin-bottom:96px}
 
 /* Footer */
 .ftr{background:var(--royal-deep);color:rgba(255,255,255,.72);padding-block:clamp(48px,6vw,80px) 28px;border-top:1px solid rgba(255,255,255,.1);font-size:15px}
@@ -532,3 +532,46 @@ main>.services{border-radius:28px 28px 0 0;margin-top:-28px;box-shadow:0 -24px 5
 .prose h2{font-size:clamp(26px,3vw,34px);line-height:1.15;letter-spacing:-.03em;font-weight:500;color:var(--royal-ink);margin-top:12px}
 .prose h3{font-size:20px;font-weight:600;color:var(--royal);margin-top:8px}
 .about__lede a{color:#BFE6FA;text-decoration:underline;text-underline-offset:3px}
+
+/* Hero d’accueil : titre descriptif, un seul bouton */
+.hero:not(.hero--page) .hero__copy{max-width:min(40rem,100%)}
+.hero:not(.hero--page) .hero__title{max-width:none}
+
+/* Menu des services */
+.nav-drop{position:relative}
+.nav-drop__btn{font:inherit;font-size:inherit;color:inherit;background:none;border:0;padding:4px 0;cursor:pointer;position:relative}
+.nav-drop__btn::after{content:"";position:absolute;left:0;right:0;bottom:0;height:2px;background:var(--grad);border-radius:2px;transform:scaleX(0);transform-origin:right;transition:transform .45s var(--ease)}
+.nav-drop__btn:hover::after,.nav-drop__btn[aria-expanded="true"]::after{transform:scaleX(1);transform-origin:left}
+.nav-drop__menu{position:absolute;top:calc(100% + 12px);left:0;z-index:80;min-width:min(300px,calc(100vw - 32px));max-height:min(70vh,440px);overflow:auto;margin:0;padding:8px;background:var(--white);color:var(--ink);border:1px solid var(--line);border-radius:8px;box-shadow:var(--lift)}
+.nav-drop__menu[hidden]{display:none}
+.nav-drop__menu a{display:block;padding:9px 12px;border-radius:4px;color:var(--ink);background:none!important;white-space:normal}
+.nav-drop__menu a::after{display:none}
+.nav-drop__menu a:hover,.nav-drop__menu a:focus-visible{background:var(--royal-soft)!important}
+.nav-drop__menu a[aria-current="page"]{color:var(--royal);font-weight:600}
+@media (max-width:700px){
+  .nav-drop{flex:1 1 100%}
+  .nav-drop__menu{position:static;max-height:none;width:100%;box-shadow:none;margin-top:8px}
+}
+@media (max-width:420px){
+  .hdr__cta .btn--sm{display:none}
+}
+
+/* Appel toujours visible sur mobile, même numéro que l’en-tête */
+.call-sticky{display:none}
+@media (max-width:900px){
+  .call-sticky{position:fixed;z-index:70;right:16px;bottom:16px;display:inline-flex;align-items:center;justify-content:center;min-height:48px;padding:0 22px;border-radius:999px;background:var(--cyan);color:var(--white);font-weight:600;font-size:15px;box-shadow:0 10px 24px rgba(15,46,102,.28)}
+  body{padding-bottom:76px}
+}
+
+.form__reply{margin:0;font-size:14px;line-height:1.45;font-weight:400;color:var(--slate)}
+.form.is-confirm > :not(.form__confirm),.form.is-done > :not(.form__done){display:none}
+.form__confirm{display:flex;flex-direction:column;gap:12px}
+.form__confirm[hidden],.form__done[hidden]{display:none}
+.form__confirm-title{font-size:18px;font-weight:600;color:var(--royal);margin:0}
+.form__confirm dl{display:grid;gap:2px;margin:0}
+.form__confirm dt{font-size:12px;font-weight:600;color:var(--slate)}
+.form__confirm dd{margin:0 0 8px;font-size:15px;color:var(--ink)}
+.form__edit{align-self:flex-start;background:none;border:0;padding:0;color:var(--royal);font:inherit;font-size:14px;text-decoration:underline;text-underline-offset:3px;cursor:pointer}
+.form__done{padding:4px 0;color:var(--ink);font-size:16px;line-height:1.5}
+.form__error{margin:0;color:#8C1D1D;font-size:14px;line-height:1.45}
+.form .btn{--bg:var(--royal);--fg:var(--white)}

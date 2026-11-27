@@ -71,5 +71,5 @@ test('la page carrières anglaise ouvre bientôt, sans URL inventée', async ({ 
   await page.locator('input[name="CV"]').setInputFiles(pdf);
   await page.locator('#consentement').check();
   await page.getByRole('button', { name: 'Submit my application' }).click();
-  await expect(page.locator('[data-status]')).toHaveText('Applications will open shortly.');
+  await expect(page.locator('[data-status]')).toHaveText('The online form is not open. Email your resume to info@versacapital.ca.');
 });
